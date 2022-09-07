@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'controleestacionamento-rm87336'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A02B1E9FCBD14A00BEE0F8B9944454D9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BCF91A5207944F2BA5D7FADBE109F205 }}
           package: .
