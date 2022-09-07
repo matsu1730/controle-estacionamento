@@ -32,7 +32,7 @@ namespace LifeShare.Controllers
         }
 
         //Criar o método que exibe o formulário de cadastro, criar tag helper, partial views
-        [HttpGet] //http://localhost:1231/empresa/cadastrar
+        [HttpGet] //http://localhost:1231/cliente/cadastrar
         public IActionResult Cadastrar()
         {
             return View(); //Abri a página /Views/cliente/Cadastrar.cshtml
@@ -51,8 +51,8 @@ namespace LifeShare.Controllers
         public IActionResult Editar(int Id)
         {
             //Pesquisar o Cliente pelo código
-            var Empresa = _context.Clientes.Find(Id);
-            return View(Empresa);  //Enviar o Empresa para a view
+            var Cliente = _context.Clientes.Find(Id);
+            return View(Cliente);  //Enviar o Cliente para a view
         }
 
         //Método que chama a model para atualizar os dados no banco de dados
@@ -60,17 +60,17 @@ namespace LifeShare.Controllers
         public IActionResult Editar(Cliente Cliente)
         {
             //Atualizar o Cliente no banco
-            //_context.Attach(Empresa).State = EntityState.Modified;
+            //_context.Attach(Cliente).State = EntityState.Modified;
             _context.Clientes.Update(Cliente);
             //Commit
             _context.SaveChanges();
             //Mensagem de sucesso
-            TempData["msg"] = "Empresa atualizada!";
+            TempData["msg"] = "Cliente atualizada!";
             //Redirecionar para a listagem
             return RedirectToAction("Index");
         }
 
-         //Método que recebe o id do empresa e aciona o model para remove-lo do banco
+         //Método que recebe o id do cliente e aciona o model para remove-lo do banco
         [HttpPost]
         public IActionResult Remover(int Id)
         {
@@ -81,7 +81,7 @@ namespace LifeShare.Controllers
             //Commit
             _context.SaveChanges();
             //Mensagem
-            TempData["msg"] = "Empresa Removida!";
+            TempData["msg"] = "Cliente Removida!";
             //Redirect para a página de listagem
             return RedirectToAction("Index");
         }
@@ -90,7 +90,7 @@ namespace LifeShare.Controllers
         [HttpPost]
         public IActionResult Pesquisar(int ClienteId)
         {
-            //Pesquisar a empresa por id
+            //Pesquisar a cliente por id
             var lista = _context.Clientes.ToList();
             var clientes = lista.Find(current => current.ClienteId == ClienteId);
 

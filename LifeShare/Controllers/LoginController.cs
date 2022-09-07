@@ -19,7 +19,7 @@ namespace LifeShare.Controllers
             {
                 if(Admin.Email.Equals(AdminModel.Email) && Admin.Senha.Equals(AdminModel.Senha))
                 {
-                    return Redirect("/Empresa/Index");
+                    return Redirect("/Cliente/Index");
                 }
             }
                 TempData["msg"] = "Login ou senha incorretos!";

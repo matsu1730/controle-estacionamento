@@ -21,6 +21,7 @@ namespace LifeShare.Models
         [Column("Dt_Saida"), DataType(DataType.Date), Display(Name = "Data de Saída")]
         public DateTime DataSaida { get; set; }
         public string Placa { get; set; }
+        [Column("Cor_Carro")]
         public CorCarro CorCarro { get; set; }
 
     }
