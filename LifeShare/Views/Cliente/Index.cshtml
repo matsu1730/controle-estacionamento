@@ -34,8 +34,9 @@
         <table class="table">
             <tr class="text-lightseagreen">
                 <th>Código</th>
-                <th>Nome Empresa</th>
+                <th>Nome</th>
                 <th>Data de entrada</th>
+                <th>Data de saída</th>
                 <th>Placa do carro</th>
                 <th>Cor do carro</th>
                 <th></th>
@@ -46,6 +47,7 @@
                     <td>@cliente.ClienteId</td>
                     <td>@cliente.Nome</td>
                     <td>@cliente.DataEntrada.ToShortDateString()</td>
+                    <td>@cliente.DataSaida.ToShortDateString()</td>
                     <td>@cliente.Placa</td>
                     <td>@cliente.CorCarro</td>
                     <td>
